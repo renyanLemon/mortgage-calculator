@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="location" content="province=;city=;coord=" />
+    <title>房贷计算器</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" href="./static/mobile/css/icon-font.css">
+    <link rel="stylesheet" href="./static/mobile/css/jisuan.css?v=1.0.1">
+    <script type="text/javascript">_get_types = 1;</script>
+    <script type="text/javascript">_lat_lon = '';</script>
+</head>
+<body>
+    <div class="top">
+        <a href="javascript:;" class="top_back"><i class="icon icon-icon-test1-copy"></i></a>
+    </div>
+
+
+    <div class="js on">
+        <div class="nav" id="nav">
+            <a href="javascript:;" data-type="a">公积金贷款</a>
+            <a href="javascript:;" data-type="b" class="on">商业贷款</a>
+            <a href="javascript:;" data-type="c">组合贷款</a>
+        </div>
+        <ul>
+            <li>
+                <i>计算方式</i>
+                <div>
+                    <select class="mode">
+                        <option value="a">按房屋总价计算</option>
+                        <option value="b">按单位和面积计算</option>
+                    </select>
+                </div>
+            </li>
+            <li class="js_more">
+                <i>单价(元/m²)</i>
+                <div>
+                    <input type="text" value="0" class="danjia">
+                </div>
+            </li>
+            <li class="js_more">
+                <i>面积(m²)</i>
+                <div>
+                    <input type="text" value="0" class="mianji">
+                </div>
+            </li>
+            <li>
+                <i>房价总额</i>
+                <div>
+                    <input type="text" value="0" class="price">
+                </div>
+            </li>
+            <li>
+                <i>贷款比例</i>
+                <div>
+                    <select class="bili">
+                        <option value="7">7成</option>
+                        <option value="6">6成</option>
+                        <option value="5">5成</option>
+                        <option value="4">4成</option>
+                        <option value="3">3成</option>
+                        <option value="2">2成</option>
+                        <option value="1">1成</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <i>贷款金额(万)</i>
+                <div>
+                    <input type="text" placeholder="0" class="num">
+                </div>
+            </li>
+            <li>
+                <i>公积金年限</i>
+                <div>
+                    <select class="year">
+                        <option value="30">30年</option>
+                        <option value="29">29年</option>
+                        <option value="28">28年</option>
+                        <option value="27">27年</option>
+                        <option value="26">26年</option>
+                        <option value="25">25年</option>
+                        <option value="24">24年</option>
+                        <option value="23">23年</option>
+                        <option value="22">22年</option>
+                        <option value="21">21年</option>
+                        <option value="20" selected >20年</option>
+                        <option value="19">19年</option>
+                        <option value="18">18年</option>
+                        <option value="17">17年</option>
+                        <option value="16">16年</option>
+                        <option value="15">15年</option>
+                        <option value="14">14年</option>
+                        <option value="13">13年</option>
+                        <option value="12">12年</option>
+                        <option value="11">11年</option>
+                        <option value="10">10年</option>
+                        <option value="9">9年</option>
+                        <option value="8">8年</option>
+                        <option value="7">7年</option>
+                        <option value="6">6年</option>
+                        <option value="5">5年</option>
+                        <option value="4">4年</option>
+                        <option value="3">3年</option>
+                        <option value="2">2年</option>
+                        <option value="1">1年</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <i>公积金利率</i>
+                <div>
+                    <select  class="lilv js_lilv">
+                        <option value="100">最新基准利率(3.25%)</option>
+                        <option value="95">最新基准利率9.5折</option>
+                        <option value="90">最新基准利率9折</option>
+                        <option value="85">最新基准利率8.5折</option>
+                        <option value="80">最新基准利率8折</option>
+                        <option value="70">最新基准利率7折</option>
+                        <option value="110">最新基准利率1.1倍</option>
+                        <option value="120">最新基准利率1.2倍</option>
+                        <option value="130">最新基准利率1.3倍</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <ul class="on">
+            <li>
+                <i>计算方式</i>
+                <div>
+                    <select class="mode">
+                        <option value="a">按房屋总价计算</option>
+                        <option value="b">按单位和面积计算</option>
+                    </select>
+                </div>
+            </li>
+            <li class="js_more">
+                <i>单价(元/m²)</i>
+                <div>
+                    <input type="text" value="0" class="danjia">
+                </div>
+            </li>
+            <li class="js_more">
+                <i>面积(m²)</i>
+                <div>
+                    <input type="text" value="0" class="mianji">
+                </div>
+            </li>
+            <li>
+                <i>房屋总价(万)</i>
+                <div>
+                    <input type="text" value="0" class="price">
+                </div>
+            </li>
+            <li>
+                <i>贷款比例</i>
+                <div>
+                    <select class="bili">
+                        <option value="7">7成</option>
+                        <option value="6">6成</option>
+                        <option value="5">5成</option>
+                        <option value="4">4成</option>
+                        <option value="3">3成</option>
+                        <option value="2">2成</option>
+                        <option value="1">1成</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <i>贷款金额(万)</i>
+                <div>
+                    <input type="text" placeholder="0" class="num">
+                </div>
+            </li>
+            <li>
+                <i>商贷年限</i>
+                <div>
+                    <select class="year">
+                        <option value="30">30年</option>
+                        <option value="29">29年</option>
+                        <option value="28">28年</option>
+                        <option value="27">27年</option>
+                        <option value="26">26年</option>
+                        <option value="25">25年</option>
+                        <option value="24">24年</option>
+                        <option value="23">23年</option>
+                        <option value="22">22年</option>
+                        <option value="21">21年</option>
+                        <option value="20" selected >20年</option>
+                        <option value="19">19年</option>
+                        <option value="18">18年</option>
+                        <option value="17">17年</option>
+                        <option value="16">16年</option>
+                        <option value="15">15年</option>
+                        <option value="14">14年</option>
+                        <option value="13">13年</option>
+                        <option value="12">12年</option>
+                        <option value="11">11年</option>
+                        <option value="10">10年</option>
+                        <option value="9">9年</option>
+                        <option value="8">8年</option>
+                        <option value="7">7年</option>
+                        <option value="6">6年</option>
+                        <option value="5">5年</option>
+                        <option value="4">4年</option>
+                        <option value="3">3年</option>
+                        <option value="2">2年</option>
+                        <option value="1">1年</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <i>利率方式</i>
+                <div>
+                    <select class="switch_lpr">
+                        <option value="b">基准利率</option>
+                        <option value="a">LPR基础利率</option>
+                    </select>
+                </div>
+            </li>
+            <li class="type_jizhun on">
+                <i>商贷利率</i>
+                <div>
+                    <select class="lilv js_lilvs">
+                        <option value="100">最新基准利率(4.9%)</option>
+                        <option value="95">最新基准利率9.5折</option>
+                        <option value="90">最新基准利率9折</option>
+                        <option value="85">最新基准利率8.5折</option>
+                        <option value="80">最新基准利率8折</option>
+                        <option value="70">最新基准利率7折</option>
+                        <option value="110">最新基准利率1.1倍</option>
+                        <option value="120">最新基准利率1.2倍</option>
+                        <option value="130">最新基准利率1.3倍</option>
+                    </select>
+                </div>
+            </li>
+            <li class="type_lpr">
+                <i>LPR</i>
+                <div>
+                    <input type="number" value="4.65" class="lpr">
+                </div>
+            </li>
+            <li class="type_lpr">
+                <i>基点</i>
+                <div>
+                    <input type="number" value="0" class="jidian">
+                </div>
+            </li>
+            <li class="type_lpr">
+                <i>商贷利率</i>
+                <div class="js_flex">
+                    <span class="js_a">4.65%</span>
+                    <em>+</em>
+                    <span class="js_b">0‱</span>
+                    <em>=</em>
+                    <span class="js_c">4.65%</span>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <i>公积金贷款总额(万)</i>
+                <div>
+                    <input type="text" id="gjjnum" placeholder="公积金贷款金额">
+                </div>
+            </li>
+            <li>
+                <i>商业贷款总额(万)</i>
+                <div>
+                    <input type="text"  id="dknum" placeholder="商业贷款金额">
+                </div>
+            </li>
+            <li>
+                <i>商贷年限</i>
+                <div>
+                    <select class="year">
+                        <option value="30">30年</option>
+                        <option value="29">29年</option>
+                        <option value="28">28年</option>
+                        <option value="27">27年</option>
+                        <option value="26">26年</option>
+                        <option value="25">25年</option>
+                        <option value="24">24年</option>
+                        <option value="23">23年</option>
+                        <option value="22">22年</option>
+                        <option value="21">21年</option>
+                        <option value="20" selected >20年</option>
+                        <option value="19">19年</option>
+                        <option value="18">18年</option>
+                        <option value="17">17年</option>
+                        <option value="16">16年</option>
+                        <option value="15">15年</option>
+                        <option value="14">14年</option>
+                        <option value="13">13年</option>
+                        <option value="12">12年</option>
+                        <option value="11">11年</option>
+                        <option value="10">10年</option>
+                        <option value="9">9年</option>
+                        <option value="8">8年</option>
+                        <option value="7">7年</option>
+                        <option value="6">6年</option>
+                        <option value="5">5年</option>
+                        <option value="4">4年</option>
+                        <option value="3">3年</option>
+                        <option value="2">2年</option>
+                        <option value="1">1年</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <i>公积金利率</i>
+                <div>
+                    <select id="gjjlilv" class="js_lilv">
+                        <option value="100">最新基准利率(3.25%)</option>
+                        <option value="95">最新基准利率9.5折</option>
+                        <option value="90">最新基准利率9折</option>
+                        <option value="85">最新基准利率8.5折</option>
+                        <option value="80">最新基准利率8折</option>
+                        <option value="70">最新基准利率7折</option>
+                        <option value="110">最新基准利率1.1倍</option>
+                        <option value="120">最新基准利率1.2倍</option>
+                        <option value="130">最新基准利率1.3倍</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <i>利率方式</i>
+                <div>
+                    <select class="switch_lpr">
+                        <option value="b">基准利率</option>
+                        <option value="a">LRP基准利率</option>
+                    </select>
+                </div>
+            </li>
+
+            <li class="type_lpr">
+                <i>LPR</i>
+                <div>
+                    <input type="number" value="4.65" class="lpr">
+                </div>
+            </li>
+            <li class="type_lpr">
+                <i>基点</i>
+                <div>
+                    <input type="number" value="0" class="jidian">
+                </div>
+            </li>
+            <li class="type_lpr">
+                <i>商贷利率</i>
+                <div class="js_flex">
+                    <span class="js_a">4.65%</span>
+                    <em>+</em>
+                    <span class="js_b">0‱</span>
+                    <em>=</em>
+                    <span class="js_c">4.65%</span>
+                </div>
+            </li>
+            <li class="type_jizhun on">
+                <i>商贷利率</i>
+                <div>
+                    <select id="sdlilv">
+                        <option value="100">最新基准利率(4.9%)</option>
+                        <option value="95">最新基准利率9.5折</option>
+                        <option value="90">最新基准利率9折</option>
+                        <option value="85">最新基准利率8.5折</option>
+                        <option value="80">最新基准利率8折</option>
+                        <option value="70">最新基准利率7折</option>
+                        <option value="110">最新基准利率1.1倍</option>
+                        <option value="120">最新基准利率1.2倍</option>
+                        <option value="130">最新基准利率1.3倍</option>
+                    </select>
+                </div>
+            </li>
+
+        </ul>
+        <div class="js_box">
+            <div class="js_click">
+                <button type="button">开始计算</button>
+            </div>
+            <div class="js_tips">
+                <h5>贷款利率仅供计算使用，实际交易利率由银行评估</h5>
+            </div>
+        </div>
+    </div>
+    <div class="js_result">
+        <div class="nav type">
+            <a href="javascript:;" data-type="1" class="on">等额本息</a>
+            <a href="javascript:;" data-type="2">等额本金</a>
+        </div>
+
+        <div class="js_table">
+            <div id="container" style="width: 50%; height: 180px"></div>
+            <div class="js_right">
+                <div>
+                    <i class="js_big"></i><b>贷款总额:</b><span class="js_table_daikuan">1万</span>
+                </div>
+                <div>
+                    <i class="js_sma"></i><b>支付利息:</b><span class="js_table_lixi">0.57万</span>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <i>每月还款:</i>
+                <span class="js_table_yuegong">44</span>
+                <b>元/月</b>
+                <em class="dijian">首月还款后每月递减<em>11元</em>元</em>
+            </li>
+            <li>
+                <i>还款总额:</i>
+                <span class="js_table_zonge">1.57</span>
+                <b>万</b>
+            </li>
+            <li>
+                <i>按揭年数:</i>
+                <span class="js_table_year">30</span>
+            </li>
+        </ul>
+        <p class="js_intro">以上结果仅供参考,请以实际情况为主</p>
+    </div>
+    <div class="modal"></div>
+    <script type="text/javascript" src="./static/mobile/lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./static/mobile/lib/echarts.min.js"></script>
+    <script type="text/javascript" src="./static/mobile/lib/calculate.js"></script>
+    <script>
+        var v = {
+            mode: 'b',
+            num: 0,
+            year: 30,
+            lpr: false,
+            lilv: 0.0325,
+
+            getSum: function(){
+                var num = $('ul.on .price').val();
+                var bili = $('ul.on .bili').val();
+
+                if(num != ""){
+                    var sum = parseInt(num) * parseInt(bili) / 10;
+                    $('ul.on .num').val(sum);
+                } else {
+                    $('ul.on .num').val(0);
+                }
+
+            }
+        };
+
+        // 生成图表
+        function creatEcharts(a,b){
+            var lixi = parseInt(a);
+            var total = parseInt(b)*10000;
+
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom);
+            var app = {};
+            var option = null;
+            option = {
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: ['30%', '70%'],
+                        label: {
+                            show: false,
+
+                        },
+                        labelLine: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        data: [
+                            {value: total, name: '贷款总额'},
+                            {value: lixi, name: '支付利息'},
+                        ],
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 5,
+                                borderColor: '#fff'
+                            }
+                        },
+                        color:[
+                            '#ff9100',
+                            '#ffc500',
+                        ]
+                    }
+                ]
+            };
+
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+
+        }
+
+        // 弹层
+        function tips(e){
+            $('.modal').text(e);
+            $('.modal').show();
+
+            setTimeout(function(){
+                $('.modal').hide();
+            },2000)
+        }
+        // 填充图表数据
+        function fillData(e){
+            $('.js').removeClass('on');
+
+            $('.js_result').addClass('on');
+
+            var total = parseInt(e.totalDknum);
+            total = total.toFixed(2);
+            total = parseFloat(total);
+            $('.js_table_daikuan').text(total + "万");
+            var lixi = parseInt(e.totalLixi) /10000;
+            lixi = lixi.toFixed(2);
+
+            var zonge = total + parseFloat(lixi);
+            zonge = zonge.toFixed(2);
+
+            $('.js_table_lixi').text(lixi + "万");
+            $('.js_table_yuegong').text(parseInt(e.yuegong));
+            $('.js_table_zonge').text(zonge);
+
+            var y = parseInt(e.year);
+
+            $('.js_table_year').text(y + "年(" + y*12 + "月)");
+
+            creatEcharts(e.totalLixi,e.totalDknum);
+        }
+
+        // 切换公积金贷款/商业贷款/组合贷款
+        $('#nav a').on('click',function(){
+            var _i = $(this).index();
+            v.mode = $(this).data('type');
+            $('.js ul').eq(_i).addClass('on').siblings('ul').removeClass('on');
+            $(this).addClass('on').siblings('a').removeClass();
+        });
+
+        // 切换等额本金/等额本息
+        $('.type a').on('click',function(){
+            var type = $(this).data('type');
+            $(this).addClass('on').siblings().removeClass('on');
+
+            if(v.mode == "c"){
+                var e = calcute.zuhe(type,v.sdnum,v.gjjnum,v.year,v.year,v.sdlilv,v.gjjlilv);
+            }else {
+                var e = calcute.singleDk(type,v.num,v.year,v.lilv);
+            }
+
+            if(type == "2"){
+                $('.dijian em').text(parseInt(e.yuegongdijian));
+
+                $('.dijian').show();
+            }else {
+                $('.dijian').hide();
+
+            }
+
+            fillData(e);
+        });
+
+        // 开始计算
+        $('.js_click button').on('click',function(){
+            $('.type a').eq(0).addClass('on').siblings().removeClass('on')
+            if($('ul.on .num').val()==""){
+                tips('请输入贷款金额');
+                return false;
+            }
+
+            var type = $('.nav a.on').data('type');
+            if(type == 'c'){
+                if($('#gjjnum').val() == ""){
+                    tips("请输入公积金贷款金额");
+                    return false;
+                }
+
+                if($("#dknum").val() == ""){
+                    tips("请输入商业贷款金额");
+                    return false;
+                }
+            }
+
+
+
+
+            $('.top_back').addClass('on');
+            v.year = parseInt($('ul.on .year').val());
+
+            if(v.mode =='c'){
+                v.sdnum = $('#dknum').val();
+                v.gjjnum = $('#gjjnum').val();
+                v.gjjlilv = $('#gjjlilv').val();
+                v.sdlilv = $('#sdlilv').val();
+                if(v.year > 5){
+                    v.gjjlilv = v.gjjlilv * 0.0325 / 100;
+                }else {
+                    v.gjjlilv = v.gjjlilv * 0.0275 / 100;
+                }
+
+                if(v.lpr){
+                    var lpr = parseFloat($('ul.on .lpr').val()) * 100;
+                    var jidian = parseFloat($('ul.on .jidian').val());
+                    v.sdlilv = (lpr + jidian)/10000;
+                }else {
+                    v.sdlilv = parseFloat($('#sdlilv').val())*10;
+                    if(v.year > 5) {
+                        v.sdlilv = v.sdlilv*49/1000000;
+                    }else {
+                        v.sdlilv = v.sdlilv*435/1000000;
+                    }
+                }
+
+                var e = calcute.zuhe(1,v.sdnum,v.gjjnum,v.year,v.year,v.sdlilv,v.gjjlilv);
+                fillData(e);
+                return false;
+            }
+
+
+
+            v.num = $('ul.on .num').val();
+
+            if(v.mode == 'a'){
+                v.lilv = parseInt($('ul.on .lilv').val()) / 100;
+
+                if(v.year > 5){
+                    v.lilv *= 0.0325;
+                }else {
+                    v.lilv *= 0.0275;
+                }
+
+                var e = calcute.singleDk(1,v.num,v.year,v.lilv);
+                fillData(e);
+            }
+
+            if(v.mode == 'b') {
+                if(v.lpr){
+                    var lpr = $('ul.on .lpr').val();
+                    var jidian = $('ul.on .jidian').val();
+
+                    v.lilv = parseFloat(lpr)*10 + parseInt(jidian)/10;
+                    v.lilv /= 1000;
+
+                }else {
+                    v.lilv = $('ul.on .lilv').val();
+
+                    if(v.year > 5) {
+                        v.lilv = v.lilv*0.049/100;
+                    }else {
+                        v.lilv = v.lilv*0.0435/100;
+                    }
+                }
+
+
+                var e = calcute.singleDk(1,v.num,v.year,v.lilv);
+                fillData(e);
+            }
+
+
+
+
+        });
+
+        // 切换商业贷款，公积金贷款，组合贷款
+        $('.mode').on('change',function(){
+            if($(this).val() == 'a'){
+                $('ul.on .js_more').removeClass('on');
+            }else {
+                $('ul.on .js_more').addClass('on');
+            }
+        });
+
+        // 监听房价总额修改公积金金额
+        $('.price').on('input propertychange',function(){
+            v.getSum();
+        });
+        // 监听贷款比例变化
+        $('.bili').on('change',function(){
+            v.getSum();
+        });
+        // 返回表单
+        $('.top_back').on('click',function(){
+            if($(this).hasClass('on')){
+                $(this).removeClass('on');
+                $('.js').addClass('on');
+                $('.js_result').removeClass('on');
+            }else {
+                history.go(-1);
+            }
+
+        });
+
+        // 切换计算方式
+        $('.switch_lpr').on('change',function(){
+            if($(this).val() == 'a'){
+                v.lpr = true;
+                $('ul.on .type_lpr').addClass("on");
+                $('ul.on .type_jizhun').removeClass('on');
+            }else {
+                v.lpr = false;
+                $('ul.on .type_lpr').removeClass("on");
+                $('ul.on .type_jizhun').addClass('on');
+            }
+        });
+
+
+
+        // 年份改变利率
+        $('.year').on('change',function(){
+            var year = parseInt($(this).val())  ;
+            if(year > 5){
+                $('ul.on .js_lilv option').eq(0).text('最新基准利率(3.25%)');
+                $('ul.on .js_lilvs option').eq(0).text('最新基准利率(4.9%)');
+            }else {
+                $('ul.on .js_lilv option').eq(0).text('最新基准利率(2.75%)');
+                $('ul.on .js_lilvs option').eq(0).text('最新基准利率(4.35%)');
+            }
+        });
+
+        // 监听LPR和基点的变化修改页面数据
+        $('.lpr,.jidian').on('input propertychange',function(){
+            if($(this).val() == ""){
+                return false;
+            }
+            var lpr = $('ul.on .lpr').val();
+            var jidian = $('ul.on .jidian').val();
+            $('ul.on .js_a').text(lpr + "%");
+            $('ul.on .js_b').text(jidian + "‱");
+            var sum = (parseFloat(lpr)*100 + parseFloat(jidian));
+            sum /= 100;
+            sum = sum.toFixed(2);
+            $('ul.on .js_c').text(sum + "%");
+        });
+
+
+
+        // 监听单价和面积的变化计算出总价
+        $(".danjia,.mianji").on('input propertychange',function(){
+            var danjia = $('ul.on .danjia').val();
+            var mianji = $('ul.on .mianji').val();
+
+            if(danjia != "" && mianji!= ""){
+                var total = danjia * mianji / 10000;
+                var bili = $('ul.on .bili').val();
+                $('ul.on .price').val(total);
+                $('ul.on .num').val(total * bili /10)
+            }
+        });
+    </script>
+</body>
+</html>

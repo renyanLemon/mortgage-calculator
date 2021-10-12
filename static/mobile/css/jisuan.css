@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    color: #404040;
+    text-decoration: none;
+}
+i ,em {
+    font-style: normal;
+}
+b {
+    font-weight: normal;
+}
+ul,li {
+    list-style: none;
+}
+.top {
+    position: relative;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+.top h1 {
+    position: absolute;
+    opacity: 0;
+    top: -50px
+}
+.top a {
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+.top img {
+    display: inline-block;
+    height: 14px;
+
+}
+
+.nav {
+    display: flex;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.06);
+}
+.nav a {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+    color: #999;
+}
+.nav a.on {
+    color: #444444;
+    border-bottom: 2px solid #47A6FE;
+}
+.js {
+    display: none;
+}
+.js.on {
+    display: block;
+}
+.js i{
+    font-size: 15px;
+    color: #999;
+    width: 134px;
+}
+.js ul {
+    padding-left: 20px;
+    display: none;
+}
+.js ul.on {
+    display: block;
+}
+.js li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 20px 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.js div {
+    flex: 1;
+}
+.js input,.js select {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: transparent;
+}
+.js_box button {
+    width: 90%;
+    background: #47A6FE;
+    border-radius: 2px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    height: 46px;
+    color: #fff;
+}
+.js_click {
+    padding-top: 20px;
+    text-align: center;
+}
+.js_tips {
+    font-size: 12px;
+    padding: 0 15px;
+    color: #DDD;
+}
+.js_tips h5 {
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: normal;
+}
+.js_result {
+    display: none;
+}
+.js_result.on {
+    display: block;
+}
+.js_table {
+    overflow: hidden;
+}
+.js_table > div {
+    float: left;
+}
+.js_right {
+    float: right;
+    width: 40%;
+    font-size: 14px;
+    padding-top: 60px;
+}
+.js_right div {
+    padding-bottom: 30px;
+}
+.js_right i {
+    position: relative;
+    bottom: 2px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.js_big {
+    background-color: #ff9100;
+}
+.js_sma {
+    background-color: #ffc500;
+}
+.js_right b {
+    color: #999;
+    font-weight: normal;
+}
+.js_result ul {
+    padding-left: 20px;
+}
+.js_result li {
+    font-size: 15px;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+}
+.js_result li i {
+    color: #999;
+    margin-right: 5px;
+}
+.js_intro {
+    font-size: 12px;
+    color: #b8b8b8;
+    padding: 20px;
+    text-align: center;
+}
+.js_tips p:nth-child(2) {
+    text-align: left;
+}
+.js_more {
+    display: none!important;
+}
+.js_more.on {
+    display: flex!important;
+}
+.js_flex {
+    display: flex;
+    justify-content: space-between;
+}
+.js_flex {
+    color: #979797;
+}
+.js_sdll {
+    display: none!important;
+}
+.js_sdll.on {
+    display: flex!important;
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 14px;
+    transform:translate(-50%,-50%);
+    background-color: rgb(0, 0, 0,.6);
+    display: none;
+}
+.js_margin {
+    content: "";
+    height: 15px;
+    display: block;
+    background-color: #eee;
+}
+.dijian {
+    color: #999;
+    font-size: 12px;
+    display: none;
+}
+
+.type_jizhun,.type_lpr {
+    display: none!important;
+}
+.type_jizhun.on ,.type_lpr.on {
+    display: flex!important;
+}
